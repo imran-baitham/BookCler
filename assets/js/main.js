@@ -9,10 +9,10 @@ function vanish() {
     loader.classList.add("disppear");
   }, 2000)
 
-  // setTimeout(() => {
-  //   welcomeAlt.style.display = "block"
-  //   document.getElementById("audio").play();
-  // }, 8000)
+  setTimeout(() => {
+    welcomeAlt.style.display = "block"
+    document.getElementById("audio").play();
+  }, 8000)
 
 }
 
