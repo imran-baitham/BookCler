@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="./assets/img/browserlogo.png" type="image/x-icon" />
+
+  <!--=============== BOXICONS ===============-->
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!--=============== SWIPER CSS ===============-->
+  <link rel="stylesheet" href="./assets/js/swiper-bundle.min.css" />
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!--=============== Title ===============-->
+  <title>BookCler | Home</title>
+</head>
+
+<body>
+  <!--=============== LOADER ===============-->
+  <div class="loader">
+    <img src="./assets/img/loader-img.gif" alt="" />
+  </div>
+
+  <!--=============== Mobile Search ================-->
+  <div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search book here" />
+        <button type="submit"><i class="bx bx-search"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <!--=============== HEADER ===============-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <div class="nav__logo">
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-grid-alt change-theme" id="header-toggle"></i>
+        </div>
+
+        <a href="#" class="nav_text">
+          BookCler
+        </a>
+      </div>
+
+      <!-- dropdown -->
+      <div class="nav__menu">
+        <select id="selection">
+          <option label="MENUS"></option>
+          <option label="BOOKS"></option>
+          <option label="STORY"></option>
+          <option label="NONES"></option>
+        </select>
+
+        <!-- Thame chanel button -->
+        <input type="text" id="search" placeholder="Search book here" />
+        <i class="bx bx-search-alt"></i>
+      </div>
+
+      <div>
+        <i class="bx bx-search change-theme" onclick="openSearch()"></i>
+        <i class="bx bx-palette change-theme" id="theme__color"></i>
+        <i class="bx bx-moon change-theme" id="theme-button"></i>
+        <i class="bx bx-shopping-bag change-theme nav__shop" id="cart-shop"></i>
+        <span class="badge">3</span>
+      </div>
+    </nav>
+
+    <!-- funcanalati -->
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+  </header>
+
+  <!--========== SIDENAV ==========-->
+  <div id="outer_sidenav">
+    <div class="sidenav" id="">
+      <nav class="nav__container">
+        <div>
+          <div class="nav__link-logo nav__logo-two">
+            <span class="nav__logo-name">BookCler</span>
+            <i class='bx bx-x nav__icon nav__dropdown-icon fucl_close' id="sidenav_close"></i>
+          </div>
+
+          <div class="nav__list">
+            <div class="nav__items">
+              <h3 class="nav__subtitle">Menu</h3>
+
+              <a href="#" class="nav__link active">
+                <i class='bx bx-home nav__icon'></i>
+                <span class="nav__name">Home</span>
+              </a>
+
+              <div class="nav__dropdown">
+                <div class="nav__link">
+                  <i class='bx bx-plus-circle nav__icon'></i>
+                  <span class="nav__name">Explore</span>
+                  <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                </div>
+
+                <div class="nav__dropdown-collapse">
+                  <div class="nav__dropdown-content">
+                    <a href="#" class="nav__dropdown-item">Books</a>
+                    <a href="#" class="nav__dropdown-item">Magazine</a>
+                    <a href="#" class="nav__dropdown-item">Textbooks</a>
+                    <a href="#" class="nav__dropdown-item">Audiobooks</a>
+                    <a href="#" class="nav__dropdown-item">Sale</a>
+                  </div>
+                </div>
+              </div>
+
+              <a href="##" class="nav__link">
+                <i class='bx bx-badge-check nav__icon'></i>
+                <span class="nav__name">Feature</span>
+              </a>
+
+              <div class="nav__dropdown">
+                <div class="nav__link">
+                  <i class='bx bx-happy-alt nav__icon'></i>
+                  <span class="nav__name">Blogs</span>
+                  <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                </div>
+
+                <div class="nav__dropdown-collapse">
+                  <div class="nav__dropdown-content">
+                    <a href="./Blog.html" class="nav__dropdown-item">Blogs</a>
+                    <a href="./Blog.html" class="nav__dropdown-item">article</a>
+                    <a href="./Blog.html" class="nav__dropdown-item">New 2022</a>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="nav__items">
+              <h3 class="nav__subtitle">Profile</h3>
+
+              <div class="nav__dropdown">
+                <div class="nav__link">
+                  <i class='bx bx-building-house nav__icon'></i>
+                  <span class="nav__name">About Us</span>
+                  <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                </div>
+
+                <div class="nav__dropdown-collapse">
+                  <div class="nav__dropdown-content">
+                    <a href="./aboutme.html" class="nav__dropdown-item">About Me</a>
+                    <a href="#" class="nav__dropdown-item">BookCler</a>
+                    <a href="#" class="nav__dropdown-item">Company</a>
+                  </div>
+                </div>
+
+              </div>
+
+              <a href="./Discover.html" class="nav__link">
+                <i class='bx bx-compass nav__icon'></i>
+                <span class="nav__name">Discover</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class='bx bx-share-alt nav__icon'></i>
+                <span class="nav__name">Share</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class='bx bx-bookmark nav__icon'></i>
+                <span class="nav__name">Saved</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="nav__link nav__logout" id="sidenav_close">
+          <i class='bx bx-log-out-circle nav__icon'></i>
+          <span class="nav__name">Exit</span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!--==================== CART ====================-->
+  <div class="cart" id="cart">
+    <i class="bx bx-x cart__close" id="cart-close"></i>
+    <h2 class="cart__title-center">My Cart</h2>
+    <div class="cart__container">
+      <!-- using js innerHtml -->
+    </div>
+    <div class="cart__prices">
+      <span class="cart__prices-item">3 items</span>
+      <button class="cart__prices-total button button--gray button--small">
+        Shop Now
+      </button>
+    </div>
+  </div>
+
+  <!--=============== MAIN ===============-->
+  <main class="main">
+    <!--=============== HOME ===============-->
+
+    <section class="home container" id="home">
+      <div class="swiper home-swiper">
+        <div class="swiper-wrapper">
+          <!-- HOME SLIDER 1 -->
+          <section class="swiper-slide">
+            <div class="home__content grid">
+              <div class="home__group">
+                <img src="assets/img/img-02.png" alt="" class="home__img" />
+                <div class="home__indicator"></div>
+
+                <div class="home__details-img">
+                  <h4 class="home__details-title">Napolean Hill</h4>
+                  <span class="home__details-subtitle">Bussiness & strategy</span>
+                </div>
+              </div>
+
+              <div class="home__data">
+                <h3 class="home__subtitle">#1 Top Best Seller</h3>
+                <h1 class="home__title">
+                  Think <br />and Grow<br />
+                  Rich!!
+                </h1>
+                <p class="home__description">
+                  Hi, I'm Reiza, people call me "El Labu". I am currently
+                  trying to learn something new, building my own bike with
+                  parts made only in Malaysia.
+                </p>
+
+                <div class="home__buttons">
+                  <button class="button new__button">Add to Cart</button>
+                  <a href="#" class="button--link button--flex">Read article <i class="bx bxs-hot button__icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOME SLIDER 2 -->
+          <section class="swiper-slide">
+            <div class="home__content grid">
+              <div class="home__group">
+                <img src="assets/img/newBrowsImgs/slider_top_3.webp" alt="" class="home__img" />
+                <div class="home__indicator"></div>
+
+                <div class="home__details-img">
+                  <h4 class="home__details-title">Adino & Grahami</h4>
+                  <span class="home__details-subtitle">No words can describe them</span>
+                </div>
+              </div>
+
+              <div class="home__data">
+                <h3 class="home__subtitle">#2 top Best duo</h3>
+                <h1 class="home__title">
+                  BRING BACK <br />
+                  MY COTTON <br />
+                  CANDY
+                </h1>
+                <p class="home__description">
+                  Adino steals cotton candy from his brother and eats them all
+                  in one bite, a hungry beast. Grahami can no longer contain
+                  his anger towards Adino.
+                </p>
+
+                <div class="home__buttons">
+                  <button class="button new__button">Add to Cart</button>
+                  <a href="#" class="button--link button--flex">Read article <i class="bx bxs-hot button__icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOME SLIDER 3 -->
+          <section class="swiper-slide">
+            <div class="home__content grid">
+              <div class="home__group">
+                <img src="assets/img/newBrowsImgs/slider_top_4.webp" alt="" class="home__img" />
+                <div class="home__indicator"></div>
+
+                <div class="home__details-img">
+                  <h4 class="home__details-title">Captain Sem</h4>
+                  <span class="home__details-subtitle">Veteran Spooky Ghost</span>
+                </div>
+              </div>
+
+              <div class="home__data">
+                <h3 class="home__subtitle">#3 Top Scariest Ghost</h3>
+                <h1 class="home__title">
+                  RESPAWN <br />
+                  THE SPOOKY <br />
+                  SKULL
+                </h1>
+                <p class="home__description">
+                  In search for cute little puppy, Captain Sem has come back
+                  from his tragic death. With his hogwarts certified power he
+                  promise to be a hero for all of ghostkind.
+                </p>
+
+                <div class="home__buttons">
+                  <button class="button new__button">Add to Cart</button>
+                  <a href="#" class="button--link button--flex">Read article <i class="bx bxs-hot button__icon"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!--==================== FEATURED ====================-->
+    <section class="featured section container" id="featured">
+      <div class="featured__container grid">
+        <article class="featured__card">
+          <span class="featured__tag" id="bodr"><img src="assets/img/transprant iconimg/info1.webp" alt="" /></span>
+          <div class="featured__data">
+            <h3 class="featured__title">FREE FAST DELIVERY</h3>
+            <span class="featured__price">Free shipping on all Uk order</span>
+          </div>
+        </article>
+
+        <article class="featured__card">
+          <span class="featured__tag"><img src="assets/img/transprant iconimg/info2.webp" alt="" /></span>
+          <div class="featured__data">
+            <h3 class="featured__title">MONEY GUARANTEE</h3>
+            <span class="featured__price">30 days money back guarantee</span>
+          </div>
+        </article>
+
+        <article class="featured__card">
+          <span class="featured__tag"><img src="assets/img/transprant iconimg/info3.webp" alt="" /></span>
+          <div class="featured__data">
+            <h3 class="featured__title">24/7 SUPPORT</h3>
+            <span class="featured__price">Support online 24 hours day</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--==================== ABOUT ====================-->
+    <section class="about section container" id="about">
+      <div class="about__container grid">
+        <img src="assets/img/about.png" alt="" class="about__img" />
+
+        <div class="about__data">
+          <h2 class="section__title about__title">
+            Who we really are & <br />
+            why choose us
+          </h2>
+
+          <p class="about__description">
+            We have over 2000+ unbiased reviews and our customers trust our
+            books process and delivery service every time
+          </p>
+
+          <div class="about__details">
+            <p class="about__details-description">
+              <i class="bx bx-badge-check about__details-icon"></i>
+              We always deliver on time.
+            </p>
+            <p class="about__details-description">
+              <i class="bx bx-badge-check about__details-icon"></i>
+              We give you guides how to read and care your books.
+            </p>
+            <p class="about__details-description">
+              <i class="bx bx-badge-check about__details-icon"></i>
+              We always come over for a check-up after sale.
+            </p>
+            <p class="about__details-description">
+              <i class="bx bx-badge-check about__details-icon"></i>
+              100% money back guaranteed.
+            </p>
+          </div>
+
+          <a href="#" class="button--link button--flex">
+            Shop Now <i class="bx bx-right-arrow-alt button__icon"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== DISCOVER ====================-->
+    <section class="discover section container" id="discover">
+      <div class="arrow">
+        <h2 class="section__title about__title">
+          Discover the most <br />
+          attractive books
+        </h2>
+        <div id="left">
+          <i class="bx bx-left-arrow-alt"></i>
+          <i class="bx bx-right-arrow-alt"></i>
+        </div>
+      </div>
+      <div class="discover__container swiper-container">
+        <div class="swiper-wrapper">
+          <!--==================== DISCOVER 1 ====================-->
+          <div class="discover__card swiper-slide">
+            <img src="./assets/img/bookimg/img-05.jpg" alt="" class="discover__img" />
+            <div class="discover__data">
+              <h2 class="discover__title">Bali</h2>
+              <span class="discover__description">24 tours available</span>
+            </div>
+          </div>
+
+          <!--==================== DISCOVER 2 ====================-->
+          <div class="discover__card swiper-slide">
+            <img src="./assets/img/bookimg/img-05.jpg" alt="" class="discover__img" />
+            <div class="discover__data">
+              <h2 class="discover__title">Hawaii</h2>
+              <span class="discover__description">15 tours available</span>
+            </div>
+          </div>
+
+          <!--==================== DISCOVER 3 ====================-->
+          <div class="discover__card swiper-slide">
+            <img src="./assets/img/bookimg/img-05.jpg" alt="" class="discover__img" />
+            <div class="discover__data">
+              <h2 class="discover__title">Hvar</h2>
+              <span class="discover__description">18 tours available</span>
+            </div>
+          </div>
+
+          <!--==================== DISCOVER 4 ====================-->
+          <div class="discover__card swiper-slide">
+            <img src="./assets/img/bookimg/img-05.jpg" alt="" class="discover__img" />
+            <div class="discover__data">
+              <h2 class="discover__title">Whitehaven</h2>
+              <span class="discover__description">32 tours available</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!--==================== QUESTIONS ====================-->
+    <section class="questions section" id="faqs">
+      <h2 class="section__title-center questions__title container section__title">
+        Some common questions <br />
+        were often asked
+      </h2>
+
+      <div class="questions__container container grid">
+        <div class="questions__group">
+          <div class="questions__item">
+            <div class="questions__header">
+              <i class="ri-add-line questions__icon"></i>
+              <h3 class="questions__item-title">
+                My flowers are falling off or dying?
+              </h3>
+            </div>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                Plants are easy way to add color energy and transform your
+                space but which planet is for you. Choosing the right plant.
+              </p>
+            </div>
+          </div>
+
+          <div class="questions__item">
+            <div class="questions__header">
+              <i class="ri-add-line questions__icon"></i>
+              <h3 class="questions__item-title">
+                What causes leaves to become pale?
+              </h3>
+            </div>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                Plants are easy way to add color energy and transform your
+                space but which planet is for you. Choosing the right plant.
+              </p>
+            </div>
+          </div>
+
+          <div class="questions__item">
+            <div class="questions__header">
+              <i class="ri-add-line questions__icon"></i>
+              <h3 class="questions__item-title">
+                What causes brown crispy leaves?
+              </h3>
+            </div>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                Plants are easy way to add color energy and transform your
+                space but which planet is for you. Choosing the right plant.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="questions__group">
+          <div class="questions__item">
+            <div class="questions__header">
+              <i class="ri-add-line questions__icon"></i>
+              <h3 class="questions__item-title">How do i choose a plant?</h3>
+            </div>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                Plants are easy way to add color energy and transform your
+                space but which planet is for you. Choosing the right plant.
+              </p>
+            </div>
+          </div>
+
+          <div class="questions__item">
+            <div class="questions__header">
+              <i class="ri-add-line questions__icon"></i>
+              <h3 class="questions__item-title">How do I change the pots?</h3>
+            </div>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                Plants are easy way to add color energy and transform your
+                space but which planet is for you. Choosing the right plant.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== Article ===============-->
+    <section class="services section container" id="services">
+      <h2 class="section__title">Letest Article</h2>
+
+      <div class="services__container grid">
+        <div class="services__data">
+          <img src="./assets/img/blog.webp" class="svg__color services__img" alt="" />
+          <div class="services__div">
+            <h3 class="services__subtitle">
+              Benefits of reading : Smart, Diligent, Happy
+            </h3>
+            <p class="services__description">
+              Pay with a Visa or PayPal card and without much ado.
+            </p>
+
+            <div class="home__buttons">
+              <button class="button--link button--flex">
+                😍 Read article
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="services__data">
+          <img src="./assets/img/blogtwo.webp" class="svg__color services__img" alt="" />
+          <div class="services__div">
+            <h3 class="services__subtitle">
+              What books you should read in 2022?
+            </h3>
+            <p class="services__description">
+              We offer sale of products through the Internet.
+            </p>
+
+            <div class="home__buttons">
+              <button class="button--link button--flex">
+                😍 Read article
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="services__data">
+          <img src="./assets/img/blogthree.webp" class="svg__color services__img" alt="" />
+          <div class="services__div">
+            <h3 class="services__subtitle">
+              Why reading is Important for our children
+            </h3>
+            <p class="services__description">
+              In our app you can see the delay time of your order.
+            </p>
+
+            <div class="home__buttons">
+              <button class="button--link button--flex">
+                😍 Read article
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="services__center">
+        <button class="button services__btn">
+          <a href="##">Read More</a>
+        </button>
+      </div>
+    </section>
+
+    <!--==================== NEW ====================-->
+    <section class="new section container" id="new">
+      <div class="arrow">
+        <h2 class="section__title new__heading">New Arrivals</h2>
+        <div id="new__arrows">
+          <i class="bx bx-left-arrow-alt"></i>
+          <i class="bx bx-right-arrow-alt"></i>
+        </div>
+      </div>
+      <!-- Part One  -->
+      <div class="new__container">
+        <div class="swiper new-swiper">
+          <div class="swiper-wrapper">
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-06.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Longines rose</h3>
+                <span class="new__price">$980</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-07.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Jazzmaster</h3>
+                <span class="new__price">$1150</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-08.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Dreyfuss gold</h3>
+                <span class="new__price">$750</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-09.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Portuguese rose</h3>
+                <span class="new__price">$1590</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-10.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Portuguese rose</h3>
+                <span class="new__price">$1590</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+            <article class="new__card swiper-slide">
+              <span class="new__tag">New</span>
+
+              <img src="assets/img/bookimg/img-11.jpg" alt="" class="new__img" />
+
+              <div class="new__data">
+                <h3 class="new__title">Portuguese rose</h3>
+                <span class="new__price">$1590</span>
+              </div>
+
+              <button class="button new__button">ADD TO CART</button>
+            </article>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== NEWSLETTER ====================-->
+    <section class="newsletter section container">
+      <div class="newsletter__bg grid">
+        <div>
+          <h2 class="newsletter__title">
+            Subscribe Our <br />
+            Newsletter
+          </h2>
+          <p class="newsletter__description">
+            Don't miss out on your discounts. Subscribe to our email
+            newsletter to get the best offers, discounts, coupons, gifts and
+            much more.
+          </p>
+        </div>
+
+        <div class="newsletter__subscribe">
+          <span class="email_pro"></span>
+          <div class="newsletter__subscribe">
+            <input type="email" placeholder="Enter your email" class="newsletter__input" />
+            <button class="button" id="buttones">SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== SPONSORS ====================-->
+    <section class="sponsor section">
+      <div class="sponsor__container container grid">
+        <div class="sponsor__content">
+          <img src="./assets/img/travel/sponsors1.png" alt="" class="sponsor__img" />
+        </div>
+        <div class="sponsor__content">
+          <img src="./assets/img/travel/sponsors2.png" alt="" class="sponsor__img" />
+        </div>
+        <div class="sponsor__content">
+          <img src="./assets/img/travel/sponsors3.png" alt="" class="sponsor__img" />
+        </div>
+        <div class="sponsor__content">
+          <img src="./assets/img/travel/sponsors4.png" alt="" class="sponsor__img" />
+        </div>
+        <div class="sponsor__content">
+          <img src="./assets/img/travel/sponsors5.png" alt="" class="sponsor__img" />
+        </div>
+      </div>
+    </section>
+
+    <!--==================== YOUTUBE vIDEO ====================-->
+    <div class="video"></div>
+
+    <!--==================== Cookies ====================-->
+    <div class="Cookies">
+      <i class="bx bx-x Cookie_close" onclick="closeCookie()"></i>
+      <div class="container_Cookies container">
+        <div class="Cookie">
+          <p>
+            By clicking “Accept All Cookies”, you agree to store Cookies, web
+            beacons and similar technologies.
+            <a href="##">Cookie Settings</a> enable certain functions on our
+            site, let you access your account, social media, advertising, and
+            partners. Our <a href="##">Privacy Policy</a> and
+            <a href="##">Cookie Policy</a>.
+          </p>
+        </div>
+        <div class="Cookie">
+          <button class="button Cookie_btn">accept</button>
+        </div>
+      </div>
+    </div>
+
+    <!--=============== THEME COLOR ===============-->
+    <section>
+      <div class="theme__model">
+        <div class="theme__modal-contant">
+          <i class="bx bx-x theme_close"></i>
+
+          <h3 class="theme__model-price">Choice your Color theme</h3>
+
+          <p class="theme__model-discrip">
+            Tap to change the color accent of theme
+          </p>
+
+          <ul class="theme__model-list">
+            <li class="theme__model-item theme__buttons" data-color="200" style="background-color: #61b2db">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+
+            <li class="theme__model-item theme__buttons" data-color="356" style="background-color: #db6169">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+
+            <li class="theme__model-item theme__buttons" data-color="150" style="background-color: #65db9e">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+
+            <li class="theme__model-item theme__buttons" data-color="250" style="background-color: #7561db">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+
+            <li class="theme__model-item theme__buttons" data-color="100" style="background-color: #8adb61">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+
+            <li class="theme__model-item theme__buttons" data-color="420" style="background-color: #dbdb61">
+              <i class="bx bx-heart theme__model-icon"></i>
+            </li>
+          </ul>
+
+          <button class="button btn" onclick="cloaseColors()">AWESOME</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content grid">
+        <div class="footer__data">
+          <h3 class="footer__title">
+            <div class="nav__logo">
+              <a href="#">
+                GB_BookCler
+              </a>
+            </div>
+          </h3>
+          <p class="footer__description">
+            Choose your book to <br />
+            reading, we offer you the <br />
+            books With Delivery.
+          </p>
+          <div>
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+              <i class="ri-facebook-box-fill change-theme"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="footer__social">
+              <i class="ri-twitter-fill change-theme"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+              <i class="ri-instagram-fill change-theme"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" class="footer__social">
+              <i class="ri-linkedin-fill change-theme"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+              <i class="ri-youtube-fill change-theme"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__data">
+          <h3 class="footer__subtitle">About</h3>
+          <ul>
+            <li class="footer__item">
+              <a href="" class="footer__link">About Us</a>
+            </li>
+            <li class="footer__item">
+              <a href="./Products/products.html" class="footer__link">Features</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">New & Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__data">
+          <h3 class="footer__subtitle">Company</h3>
+          <ul>
+            <li class="footer__item">
+              <a href="" class="footer__link">Team</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Plan & Pricing</a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link">Become a member</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">We accept all credit cards</h3>
+
+          <div class="footer__cards">
+            <img src="./assets/img/CARD/card1.png" alt="" class="footer__card" />
+            <img src="./assets/img/CARD/card2.png" alt="" class="footer__card" />
+            <img src="./assets/img/CARD/card3.png" alt="" class="footer__card" />
+            <img src="./assets/img/CARD/card4.png" alt="" class="footer__card" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__rights">
+        <p class="footer__copy">
+          &#169; 2022 BOOKSTORE. All rigths reserved.
+        </p>
+        <div class="footer__terms">
+          <a href="https://policies.google.com/terms?hl=en" class="footer__terms-link">Terms & Agreements</a>
+          <a href="https://policies.google.com/privacy?hl=en" class="footer__terms-link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--=============== SCROLL UP ======================-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+  </a>
+
+  <!-- =============  notfaction =====================-->
+  <div class="alert simple-alert">
+    <div class="bell__icon">
+      <i class="bx bxs-bell-ring notifaction__icons"></i>
+      <h3 class="alert__text">Welcome to GB_BookMark</h3>
+    </div>
+    <a class="close" onclick="closeNotfi()" id="close__btn">&times;</a>
+
+    <audio src="./assets/img/notfetone/Notificationbestbell.mp3" id="audio" controls style="display: none"></audio>
+  </div>
+
+  <!-- =============  SUBSCRIBE notfaction two =====================-->
+  <div class="toast">
+    <div class="toast-content">
+      <i class="bx bx-check fa-solid fa-check check"> </i>
+      <div class="message">
+        <span class="text text-1">Success</span>
+        <span class="text text-2">Thanks for Subscribe our chanel</span>
+      </div>
+    </div>
+    <i class="bx bx-x close" onclick="notfiLetter()"></i>
+    <div class="progress"></div>
+
+    <audio src="./assets/img/notfetone/Notificationsmalltone.mp3" id="audiotwo" controls style="display: none"></audio>
+  </div>
+
+  <!--=============== SCROLLREVEAL ===============-->
+  <script src="./assets/js/scrollreveal.min.js"></script>
+
+  <!--=============== SWIPER JS ===============-->
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+
+  <!--=============== MIXITUP FILTER ===============-->
+  <script src="./assets/js/mixitup.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
