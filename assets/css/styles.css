@@ -1655,6 +1655,19 @@ button:active,
   padding-top: 1.9px;
 }
 
+/* =============   WhatsApp   =========== */
+.Whatsapp {
+  position: fixed;
+  left: 2%;
+  bottom: 1%;
+  font-size: var(--small-font-size);
+}
+
+.Whatsapp_img {
+  width: 35px;
+  height: 35px;
+}
+
 /* ===================  notifaction newletter =========================== */
 
 .toast {
@@ -1952,6 +1965,19 @@ button:active,
 
   .sidenav {
     width: 270px;
+  }
+
+  /* =============   WhatsApp   =========== */
+  .Whatsapp {
+    position: fixed;
+    left: 1%;
+    bottom: 1%;
+    font-size: var(--small-font-size);
+  }
+
+  .Whatsapp_img {
+    width: 50px;
+    height: 50px;
   }
 }
 
