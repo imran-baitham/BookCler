@@ -634,13 +634,13 @@ delivery.forEach((develr) => {
 
 // =====================================================
 
-let article = document.querySelectorAll(".button--link")
+// let article = document.querySelectorAll(".button--link")
 
-article.forEach((artel) => {
-  artel.addEventListener("click", () => {
-    alert("working on page coming soon")
-  })
-})
+// article.forEach((artel) => {
+//   artel.addEventListener("click", () => {
+//     alert("working on page coming soon")
+//   })
+// })
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
