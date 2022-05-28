@@ -670,3 +670,36 @@ sr.reveal(`.discover, .newsletter,`, {
 })
 
 // ==========================================
+// ==========================================
+
+/*=============== SWIPER TESTIMONIAL ===============*/
+let swiperTestimonial = new Swiper(".testimonial__container", {
+  spaceBetween: 24,
+  loop: true,
+  grabCursor: true,
+
+  rewind: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 48,
+    },
+  },
+});

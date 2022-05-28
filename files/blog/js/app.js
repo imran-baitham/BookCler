@@ -26,8 +26,11 @@ const postArticle = {
     // //       ${post.likes}${post.isLike ? "UnLike" : "Likes"}<p>
     // // </div class="div">
     // },
-    //    <a href="#" class="btn">read more</a>
+    //    <a href="#" class="btn">read more</a>\7
 
+    myBlogsShow: (postId) => {
+        console.log(postId, "hiii")
+    },
     renderPost: (post) => {
         return `
          <div class="box">
@@ -38,7 +41,9 @@ const postArticle = {
                <h3>${post.title}</h3>
                <p>${post.caption}</p>
                <div>
-               <a href="#" class="btn">😍 Read article & Download</a>
+               <button class="btn blogBtns">
+               😍 Read article & Download
+               </button>
                </div>
                <div class="icons">
                   <span> <i class="bx bx-calendar"></i> ${post.createdAt} </span>
@@ -48,12 +53,22 @@ const postArticle = {
          </div>
       `;
     },
-    // <span> <i class="bx bx-calendar"></i> 21st may, 2022 </span>
-    // <a href="#" class="btn"><i class='bx bx-downvote' ></i> Download</a>
+
     render: () => {
         const { state: { posts }, renderPost, } = postArticle;
         const root = document.querySelector(".box-container");
         root.innerHTML = posts.map((post) => renderPost(post)).join("");
+
+        let btns = document.querySelectorAll(".blogBtns")
+        btns.forEach((items) => {
+            items.addEventListener("click", (id) => {
+                const studentState = [...postArticle.state.posts];
+                const index = studentState.findIndex(
+                    (x) => x.id == studentState.id
+                );
+                console.log(index)
+            })
+        })
     },
 };
 
@@ -77,8 +92,33 @@ loadMoreBtn.onclick = () => {
 // function myFunction() {
 //     var x = document.getElementById("myDIV");
 //     if (x.style.display === "none") {
-//       x.style.display = "block";
+//         x.style.display = "block";
 //     } else {
-//       x.style.display = "none";
+//         x.style.display = "none";
 //     }
-//   }
+// }
+// ===========================
+// <span> <i class="bx bx-calendar"></i> 21st may, 2022 </span>
+// <a href="#" class="btn"><i class='bx bx-downvote' ></i> Download</a>
+
+// ========================================================
+// const studentState = [...studentApp.state.students];
+// const student = studentState.find((x) => x.id === id);
+
+// if (student) {
+//   studentApp.state.newStudent = student;
+//   const previewContent = `
+//       <div class= "previews">
+//       <img src= ${student.image} >
+//       <p>ID: ${student.id}</p>
+//         <p>Name: ${student.firstName}</p>
+//         <p>Class: ${student.class}</p>
+//         <p>Gender: ${student.gender}</p>
+//         <p>DOB: ${student.DOB}</p>
+//         <p>Phone: ${student.Phone}</p>
+//         <p>About: ${student.about}</p>
+//       </div>
+//   `;
+//   // preview.style.border = `1px solid #eee`;
+//   preview.innerHTML = previewContent;
+// }

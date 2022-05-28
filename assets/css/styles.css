@@ -298,6 +298,11 @@ body.light-theme {
   }
 }
 
+/*  */
+.pages {
+  margin: 0% auto;
+}
+
 /* =============== mobile search =================== */
 
 .overlay {
@@ -834,7 +839,7 @@ select:hover,
 .home__indicator {
   width: 8px;
   height: 8px;
-  background-color: var(--first-color);
+  background-color: var(--title-color);
   border-radius: 50%;
   position: absolute;
   top: 7rem;
@@ -842,18 +847,18 @@ select:hover,
 }
 
 .home__indicator::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 1px;
   height: 48px;
-  background-color: var(--first-color);
+  background-color: var(--title-color);
   top: -3rem;
   right: 45%;
 }
 
 .home__details-img {
   position: absolute;
-  right: 0.5rem;
+  right: .5rem;
 }
 
 .home__details-title,
@@ -2025,7 +2030,7 @@ button:active,
   }
 
   .home__indicator::after {
-    top: 0;
+    top: 0rem;
     height: 75px;
   }
 
@@ -2376,6 +2381,13 @@ button:active,
   font-size: var(--h1-font-size);
 }
 
+/* ------  Model  ------- */
+.blogs__model {
+  background-color: var(--first-color);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
 
 /* ===================== div loader ==================== */
 /* #article-loader {
@@ -2592,3 +2604,151 @@ button:active,
   margin: 25px;
   margin-left: 0;
 }
+
+/* ========================= ||    BookCler Page   || =============================== */
+
+.clerhome {
+  background-color: var(--first-color);
+  background-image: url(../img/0d6f4828835899.55d4a5402cb87_740x470_crop_center.webp);
+  height: 60vh;
+  width: 100%;
+  text-align: center;
+  background-blend-mode: color;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.clerdev_center h1 {
+  font-size: var(--biggest-font-size);
+}
+
+/* =========== */
+/*=============== TESTIMONIAL ===============*/
+/* .testimonial__container {
+} */
+.testimonial__card {
+  background-color: var(--container-color);
+  border-radius: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.testimonial__img {
+  width: 60px;
+  border-radius: 60px;
+  margin-bottom: 1rem;
+}
+
+.rest_title {
+  text-align: center;
+}
+
+.testimonial__name {
+  font-weight: var(--font-medium);
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial__descrip {
+  font-size: var(--small-font-size);
+}
+
+.swiper-pagination span {
+  background-color: var(--first-color);
+}
+
+/* ------------------------------------- */
+.contact__container {
+  padding-bottom: 3rem;
+}
+
+.contact__title {
+  text-align: center;
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.contact__info {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact__card-icon {
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: 0.25rem;
+}
+
+.contact__card-title,
+.contact__card-data {
+  font-size: var(--small-font-size);
+}
+
+.contact__card-title {
+  font-weight: var(--font-medium);
+}
+
+.contact__card-data {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.contact_button {
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.25rem;
+}
+
+.contact__button:hover .contact__button-icon {
+  transform: translateX(0.25rem);
+}
+
+.contact__button-icon {
+  font-size: 1rem;
+  transition: 0.4s;
+}
+
+/*=============== CONTACT ===============*/
+
+@media screen and (min-width: 992px) {
+  .testimonial__container {
+    width: 750px;
+  }
+
+  .testimonial__card {
+    padding: 1.5rem 2rem;
+  }
+
+  .rest_title {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .contact__info {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+
+  .contact__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1050px) {}
